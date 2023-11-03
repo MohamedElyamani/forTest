@@ -1,0 +1,13 @@
+<div class="container">
+    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+    <div class="row">
+        <div *ngFor="let item of newsContainer" class="col-lg-4">
+             <div class="news-item">
+                <a [href]="item.url" target="_blank"><img class="img-fluid" [src]="item.urlToImage" alt=""></a>
+                <h5>ID: {{item.source.id}}</h5>
+                <h5>Author: {{item.author}}</h5>
+                <h5>Title: {{item.title}}</h5>
+             </div>
+        </div>
+    </div>
+</div>

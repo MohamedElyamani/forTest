@@ -1,0 +1,18 @@
+
+<!-- <div class="container">
+    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+    <div class="row">
+        <div class="col-lg-3" *ngFor="let r of recipe">
+            <div class="recpie-item py-3">
+                <img class="w-100" [src]="r.image_url" alt="">
+                <h3>{{r.title}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+ -->
+<main class="mt-5 text-center">
+  <button class="btn btn-primary me-5 p-5" (click)="emitData()">get data from subject</button>
+  <button class="btn btn-primary p-5" (click)="subData()">subscrib data</button>
+  <div class="mt-5" *ngFor="let data of myData">{{data}}</div>
+</main>

@@ -1,0 +1,51 @@
+<div class="mt-5 text-center">
+    <input [(ngModel)] = "serverName" type="text" class="w-25 mx-auto form-control">
+    <button class="btn btn-success mt-3" (click)="create()">create server</button>
+    <p>{{createServer}}</p>
+</div>
+<h1 [ngStyle]="{color: check()}">test {{checkServer}}</h1>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 [ngStyle]="{
+                    'color': isAdmine? 'green':'red'
+                }">{{userName}}</h1>
+                <h3>{{userAge}}</h3>
+                <button (click)="sayHello()" class="btn btn-primary w-50">welcome</button>
+                <button (click)="checkAdmin()" class="btn btn-warning w-50">Change Color</button>
+            </div>
+        </div>
+    </div>
+
+    <table class="table  w-75 mx-auto mt-5 bg-danger">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Salary</th>
+            <th><button class="btn btn-primary" (click)="addUser()">add</button></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users | sortList:'name'; let i = index;  let isEven = even" [style.background] = "isEven?'#ccc':'#fff'">
+                <td>{{i+1}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.salary}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <button class="btn btn-primary" (click)="click()" *ngIf="!change">Add To Cart</button>
+
+    <div class="d-flex" *ngIf="change">
+        <input type="number">
+        <button class="btn btn-danger" (click)="click()">add</button>
+    </div>
+
+
+    <button>click</button>
+
+ <h1>{{doCheck}}</h1>
